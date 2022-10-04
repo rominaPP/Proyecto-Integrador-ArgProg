@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     
     private String nombreExp;
     
@@ -37,7 +37,7 @@ public class Experiencia {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

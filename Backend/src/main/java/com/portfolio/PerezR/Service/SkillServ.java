@@ -18,7 +18,7 @@ public class SkillServ {
         return skRepo.findAll();
     }
     
-    public Optional<Skill> getOne(Integer id){
+    public Optional<Skill> getOne(int id){
         return skRepo.findById(id);
     }
     
@@ -30,11 +30,11 @@ public class SkillServ {
         skRepo.save(skill);
     }
     
-    public void delete(Integer id){
+    public void delete(int id){
         skRepo.deleteById(id);
     }
     
-    public boolean existsById(Integer id){
+    public boolean existsById(int id){
         return skRepo.existsById(id);
     }
     

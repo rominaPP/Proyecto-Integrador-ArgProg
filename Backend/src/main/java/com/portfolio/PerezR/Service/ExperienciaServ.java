@@ -18,7 +18,7 @@ public class ExperienciaServ {
         return expRepo.findAll();
     }
     
-    public Optional<Experiencia> getOne(Integer id){
+    public Optional<Experiencia> getOne(int id){
         return expRepo.findById(id);
     }
     
@@ -30,11 +30,11 @@ public class ExperienciaServ {
         expRepo.save(experiencia);
     }
     
-    public void delete(Integer id){
+    public void delete(int id){
         expRepo.deleteById(id);
     }
     
-    public boolean existsById(Integer id){
+    public boolean existsById(int id){
         return expRepo.existsById(id);
     }
     

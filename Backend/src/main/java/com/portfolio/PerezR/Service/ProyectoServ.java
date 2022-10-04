@@ -18,7 +18,7 @@ public class ProyectoServ {
         return proRepo.findAll();
     }
     
-    public Optional<Proyecto> getOne(Integer id){
+    public Optional<Proyecto> getOne(int id){
         return proRepo.findById(id);
     }
     
@@ -30,11 +30,11 @@ public class ProyectoServ {
         proRepo.save(proyecto);
     }
     
-    public void delete(Integer id){
+    public void delete(int id){
         proRepo.deleteById(id);
     }
     
-    public boolean existsById(Integer id){
+    public boolean existsById(int id){
         return proRepo.existsById(id);
     }
     

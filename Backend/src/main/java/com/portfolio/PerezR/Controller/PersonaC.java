@@ -5,7 +5,6 @@ import com.portfolio.PerezR.Entity.Persona;
 import com.portfolio.PerezR.Interface.IPersonaServ;
 import com.portfolio.PerezR.Security.Controller.Mensaje;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,61 +24,36 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaC {
      @Autowired IPersonaServ iPerServ;
                
-    @GetMapping("/lista")
-    public ResponseEntity<List<Persona>> list(){
-        List<Persona> list = iPerServ.list();
-        return new ResponseEntity(list, HttpStatus.OK);
-    }
-    @GetMapping("/detail/{id}")
-    public ResponseEntity<Persona> getById(@PathVariable("id")int id){
-        if(!iPerServ.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
-        }
-        
-        Persona persona = iPerServ.getOne(id).get();
-        return new ResponseEntity(persona, HttpStatus.OK);
+    @GetMapping("/traer")
+    public List<Persona> getPersona(){
+        return iPerServ.getPersona();
     }
     
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Persona> delete(@PathVariable("id") int id){
-        if(!iPerServ.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
-        }
-       
-        iPerServ.delete(id);
-        return new ResponseEntity(new Mensaje("Persona eliminada"), HttpStatus.OK);
+    @GetMapping("/traer/perfil")
+    public Persona findPersona(){
+        return iPerServ.findPersona((long)2);
     }
     
-    @PostMapping("/create")
+    @DeleteMapping("/borrar/{id}")
+    public String deletePersona(@PathVariable Long id){
+        iPerServ.deletePersona(id);
+        return "La persona fue eliminada correctamente";
+    }
+    
+    @PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody PersonaDto dtoper){
-        if(StringUtils.isBlank(dtoper.getNombre())){
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
-        if(iPerServ.existsByNombre(dtoper.getNombre())){
-            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-        }
         
         Persona persona = new Persona(
                 dtoper.getNombre(), dtoper.getApellido(), dtoper.getImg(), dtoper.getTitulo(), dtoper.getSobremi());
                      
-        iPerServ.save(persona);
+        iPerServ.savePersona(persona);
         return new ResponseEntity(new Mensaje("Persona creada"), HttpStatus.OK);
                 
     }
     
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody PersonaDto dtoper){
-        if(!iPerServ.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
-        }
-        if(iPerServ.existsByNombre(dtoper.getNombre()) && iPerServ.getByNombre(dtoper.getNombre()).get().getId() != id){
-            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-        }
-        if(StringUtils.isBlank(dtoper.getNombre())){
-            return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
-        }
-        
-        Persona persona = iPerServ.getOne(id).get();
+    @PutMapping("/editar/{id}")
+    public ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody PersonaDto dtoper){
+        Persona persona = iPerServ.findPersona(id);
         
         persona.setNombre(dtoper.getNombre());
         persona.setApellido(dtoper.getApellido());
@@ -87,7 +61,7 @@ public class PersonaC {
         persona.setTitulo(dtoper.getTitulo());
         persona.setSobremi(dtoper.getSobremi());
         
-        iPerServ.save(persona);
+        iPerServ.savePersona(persona);
         
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }

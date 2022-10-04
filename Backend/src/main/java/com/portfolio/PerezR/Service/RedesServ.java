@@ -18,7 +18,7 @@ public class RedesServ {
         return redRepo.findAll();
     }
     
-    public Optional<Redes> getOne(Integer id){
+    public Optional<Redes> getOne(int id){
         return redRepo.findById(id);
     }
     
@@ -30,11 +30,11 @@ public class RedesServ {
         redRepo.save(redes);
     }
     
-    public void delete(Integer id){
+    public void delete(int id){
         redRepo.deleteById(id);
     }
     
-    public boolean existsById(Integer id){
+    public boolean existsById(int id){
         return redRepo.existsById(id);
     }
     

@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     @NotNull
     private String nombre;
     @NotNull
@@ -49,7 +49,7 @@ public class Usuario {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

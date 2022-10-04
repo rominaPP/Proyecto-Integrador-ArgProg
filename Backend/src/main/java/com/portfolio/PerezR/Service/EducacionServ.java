@@ -18,7 +18,7 @@ public class EducacionServ {
         return eduRepo.findAll();
     }
     
-    public Optional<Educacion> getOne(Integer id){
+    public Optional<Educacion> getOne(int id){
         return eduRepo.findById(id);
     }
     
@@ -30,11 +30,11 @@ public class EducacionServ {
         eduRepo.save(educacion);
     }
     
-    public void delete(Integer id){
+    public void delete(int id){
         eduRepo.deleteById(id);
     }
     
-    public boolean existsById(Integer id){
+    public boolean existsById(int id){
         return eduRepo.existsById(id);
     }
     

@@ -2,20 +2,17 @@ package com.portfolio.PerezR.Interface;
 
 import com.portfolio.PerezR.Entity.Persona;
 import java.util.List;
-import java.util.Optional;
 
 public interface IPersonaServ {
-    public List<Persona> list();
+    //Traer una lista de personas
+    public List<Persona> getPersona();
     
-    public Optional<Persona> getOne(Integer id);
+    //Guardar un objeto de tipo Persona
+    public void savePersona(Persona persona);
     
-    public Optional<Persona> getByNombre(String nombre);
+    //Eliminar un objeto pero lo buscamos por ID
+    public void deletePersona(Long id);
     
-    public void save(Persona persona);
-    
-    public void delete(Integer id);
-    
-    public boolean existsById(Integer id);
-    
-    public boolean existsByNombre(String nombre);
+    //Buscar una persona por ID
+    public Persona findPersona(Long id);
 }
