@@ -32,7 +32,7 @@ public class ExperienciaC {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Experiencia> getById(@PathVariable("id")Integer id){
+    public ResponseEntity<Experiencia> getById(@PathVariable("id")int id){
         if(!expServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         }
@@ -42,7 +42,7 @@ public class ExperienciaC {
     }
     
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
+    public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!expServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -66,7 +66,7 @@ public class ExperienciaC {
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody ExperienciaDto dtoexp){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody ExperienciaDto dtoexp){
         if(!expServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }

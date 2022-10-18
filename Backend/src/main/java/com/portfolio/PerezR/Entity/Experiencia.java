@@ -33,7 +33,7 @@ public class Experiencia {
     
     //Getter and Setter
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 

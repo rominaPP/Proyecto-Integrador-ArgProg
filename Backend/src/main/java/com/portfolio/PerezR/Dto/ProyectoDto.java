@@ -9,18 +9,15 @@ public class ProyectoDto {
     
     private String inicioPro;
     
-    private String finPro;
-    
     //Constructor
 
     public ProyectoDto() {
     }
 
-    public ProyectoDto(String nombrePro, String descripPro, String inicioPro, String finPro) {
+    public ProyectoDto(String nombrePro, String descripPro, String inicioPro) {
         this.nombrePro = nombrePro;
         this.descripPro = descripPro;
         this.inicioPro = inicioPro;
-        this.finPro = finPro;
     }
      
     //Getter and Setter
@@ -49,11 +46,4 @@ public class ProyectoDto {
         this.inicioPro = inicioPro;
     }
 
-    public String getFinPro() {
-        return finPro;
-    }
-
-    public void setFinPro(String finPro) {
-        this.finPro = finPro;
-    }
 }

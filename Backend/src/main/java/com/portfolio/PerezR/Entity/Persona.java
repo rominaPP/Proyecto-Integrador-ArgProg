@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
     @NotNull
     private String nombre;
@@ -35,11 +35,11 @@ public class Persona {
         this.sobremi = sobremi;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

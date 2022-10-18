@@ -5,14 +5,14 @@ public class SkillsDto {
      
     private String nombreHyS;
     
-    private String porcentaje;
+    private int porcentaje;
     
     //Constructor
 
     public SkillsDto() {
     }
 
-    public SkillsDto(String nombreHyS, String porcentaje) {
+    public SkillsDto(String nombreHyS, int porcentaje) {
         this.nombreHyS = nombreHyS;
         this.porcentaje = porcentaje;
     }
@@ -27,11 +27,11 @@ public class SkillsDto {
         this.nombreHyS = nombreHyS;
     }
 
-    public String getPorcentaje() {
+    public int getPorcentaje() {
         return porcentaje;
     }
 
-    public void setPorcentaje(String porcentaje) {
+    public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
     

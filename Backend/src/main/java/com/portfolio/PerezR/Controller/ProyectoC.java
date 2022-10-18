@@ -32,7 +32,7 @@ public class ProyectoC {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Proyecto> getById(@PathVariable("id")Integer id){
+    public ResponseEntity<Proyecto> getById(@PathVariable("id")int id){
         if(!proServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         }
@@ -42,7 +42,7 @@ public class ProyectoC {
     }
     
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
+    public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!proServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -60,14 +60,14 @@ public class ProyectoC {
         }
         
         Proyecto proyecto = new Proyecto(
-                dtopro.getNombrePro(), dtopro.getDescripPro(), dtopro.getInicioPro(), dtopro.getFinPro());
+                dtopro.getNombrePro(), dtopro.getDescripPro(), dtopro.getInicioPro());
         proServ.save(proyecto);
         return new ResponseEntity(new Mensaje("Proyecto creado"), HttpStatus.OK);
                 
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody ProyectoDto dtopro){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody ProyectoDto dtopro){
         if(!proServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -83,7 +83,6 @@ public class ProyectoC {
         proyecto.setNombrePro(dtopro.getNombrePro());
         proyecto.setDescripPro(dtopro.getDescripPro());
         proyecto.setInicioPro(dtopro.getInicioPro());
-        proyecto.setFinPro(dtopro.getFinPro());
         
         proServ.save(proyecto);
         

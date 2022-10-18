@@ -32,7 +32,7 @@ public class EducacionC {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Educacion> getById(@PathVariable("id")Integer id){
+    public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
         if(!eduServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         }
@@ -42,7 +42,7 @@ public class EducacionC {
     }
     
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
+    public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!eduServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -67,7 +67,7 @@ public class EducacionC {
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody EducacionDto dtoedu){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody EducacionDto dtoedu){
         if(!eduServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }

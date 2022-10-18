@@ -32,7 +32,7 @@ public class RedesC {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Redes> getById(@PathVariable("id")Integer id){
+    public ResponseEntity<Redes> getById(@PathVariable("id")int id){
         if(!redServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         }
@@ -42,7 +42,7 @@ public class RedesC {
     }
     
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
+    public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!redServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -67,7 +67,7 @@ public class RedesC {
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody RedesDto dtored){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody RedesDto dtored){
         if(!redServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }

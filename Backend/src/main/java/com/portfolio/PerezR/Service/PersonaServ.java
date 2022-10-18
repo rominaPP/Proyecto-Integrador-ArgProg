@@ -1,36 +1,42 @@
 package com.portfolio.PerezR.Service;
 
 import com.portfolio.PerezR.Entity.Persona;
-import com.portfolio.PerezR.Interface.IPersonaServ;
 import com.portfolio.PerezR.Repository.PersonaRepo;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PersonaServ implements IPersonaServ{
+public class PersonaServ {
     @Autowired 
-    private PersonaRepo PerRep;
+    private PersonaRepo perRep;
 
-    @Override
-    public List<Persona> getPersona() {
-        List<Persona> persona = PerRep.findAll();
-        return persona;    
+    public List<Persona> list(){
+        return perRep.findAll();
     }
-
-    @Override
-    public void savePersona(Persona persona) {
-        PerRep.save(persona);    
+    
+    public Optional<Persona> getOne(int id){
+        return perRep.findById(id);
     }
-
-    @Override
-    public void deletePersona(Long id) {
-        PerRep.deleteById(id);    
+    
+    public Optional<Persona> getByNombreExp(String nombre){
+        return perRep.findByNombre(nombre);
     }
-
-    @Override
-    public Persona findPersona(Long id) {
-        Persona persona = PerRep.findById(id).orElse(null);
-        return persona;    
+    
+    public void save(Persona experiencia){
+        perRep.save(experiencia);
+    }
+    
+    public void delete(int id){
+        perRep.deleteById(id);
+    }
+    
+    public boolean existsById(int id){
+        return perRep.existsById(id);
+    }
+    
+    public boolean existsByNombre(String nombre){
+        return perRep.existsByNombre(nombre);
     }
 }

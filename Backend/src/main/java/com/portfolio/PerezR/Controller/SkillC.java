@@ -32,7 +32,7 @@ public class SkillC {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Skill> getById(@PathVariable("id")Integer id){
+    public ResponseEntity<Skill> getById(@PathVariable("id")int id){
         if(!hysServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         }
@@ -42,7 +42,7 @@ public class SkillC {
     }
     
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
+    public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!hysServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -68,7 +68,7 @@ public class SkillC {
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody SkillsDto dtohys){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody SkillsDto dtohys){
         if(!hysServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
