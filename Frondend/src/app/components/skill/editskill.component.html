@@ -1,0 +1,31 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <button class="btn btn-danger" (click)="volver()"  style="display:block; margin: 20px auto;">
+                    Volver
+                </button>
+                <div class="container" *ngIf="hys">
+                    <div class="row">
+                        <div>
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+                                <div class="form-group">
+                                    <label for="nombreHyS">Hard & Soft Skills</label>
+                                    <input type="text" placeholder="Ingrese Hard & Soft Skills" class="form-control" id="nombreHyS" name="nombreHyS" [(ngModel)]="hys.nombreHyS" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="porcentaje">Porcentaje</label>
+                                    <input type="text" placeholder="Ingrese porcentaje" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="hys.porcentaje" required>               
+                                </div>
+                                <button class="bn632-hover bn26" style="display:block; margin: 20px auto;">
+                                    Actualizar
+                                </button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" id="titulo">
+            <h2>Hard & Soft Skills</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="boton">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <button type="button" class="btn btn-dark" routerLink="/nuevohys" *ngIf="isLogged">
+                    Nuevo Hard & Soft Skills
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="descripcion">
+                <div *ngFor="let Skill of skill">
+                    <div class="circulo text-center">
+                        <div class="circuloP">
+                            <circle-progress
+                            [percent]= Skill.porcentaje
+                            [radius]="100"
+                            [showUnits]="false"
+                            [title]= Skill.nombreHyS
+                            [titleColor]="'#0E0144'"
+                            [titleFontSize]="'20px'"
+                            [showSubtitle]="false"
+                            [outerStrokeWidth]="10"
+                            [innerStrokeWidth]="3"
+                            [outerStrokeColor]="'#A707C8'"
+                            [innerStrokeColor]="'#AC89B3'"
+                            [animation]="true"
+                            [animationDuration]="600"
+                        ></circle-progress>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary" routerLink="/edithys/{{Skill.id}}" *ngIf="isLogged" id="be"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn btn-danger" (click)="delete(Skill.id)" *ngIf="isLogged" id="bel"><i class="bi bi-trash3"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
