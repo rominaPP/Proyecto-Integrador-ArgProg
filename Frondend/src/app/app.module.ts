@@ -29,6 +29,7 @@ import { NewProyectoComponent } from './components/proyecto/new-proyecto.compone
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { FormsModule } from '@angular/forms';
     ProyectoComponent,
     EditproyectoComponent,
     NewProyectoComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
