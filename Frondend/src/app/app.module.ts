@@ -13,6 +13,9 @@ import { NewRedesComponent } from './components/logo-ap/new-redes.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AcercaDeMiComponent } from './components/acerca-de-mi/acerca-de-mi.component';
 import { EditacercademiComponent } from './components/acerca-de-mi/editacercademi.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { EditexperienciaComponent } from './components/experiencia/editexperiencia.component';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { EditacercademiComponent } from './components/acerca-de-mi/editacercadem
     NewRedesComponent,
     BannerComponent,
     AcercaDeMiComponent,
-    EditacercademiComponent
+    EditacercademiComponent,
+    ExperienciaComponent,
+    EditexperienciaComponent,
+    NewExperienciaComponent
   ],
   imports: [
     BrowserModule,

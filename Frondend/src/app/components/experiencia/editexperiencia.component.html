@@ -1,0 +1,39 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <button class="btn btn-danger" (click)="volver()"  style="display:block; margin: 20px auto;">
+                    Volver
+                </button>
+                <div class="container" *ngIf="expe">
+                    <div class="row">
+                        <div>
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+                                <div class="form-group">
+                                    <label for="nombreExp">Trabajo</label>
+                                    <input type="text" placeholder="Ingrese tabajo realizado" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="expe.nombreExp" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripExp">Descripción del trabajo</label>
+                                    <input type="text" placeholder="Ingrese empleador y descripción" class="form-control" id="descripExp" name="descripExp" [(ngModel)]="expe.descripExp" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="inicioExp">Año de inicio</label>
+                                    <input type="text" placeholder="Ingrese año de inicio actividad" class="form-control" id="inicioExp" name="inicioExp" [(ngModel)]="expe.inicioExp" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="finExp">Año de finalización</label>
+                                    <input type="text" placeholder="Ingrese año de finalización actividad" class="form-control" id="finExp" name="finExp" [(ngModel)]="expe.finExp" required>               
+                                </div>
+                                <button class="bn632-hover bn26" style="display:block; margin: 20px auto;">
+                                    Actualizar
+                                </button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
