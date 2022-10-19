@@ -31,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { InterceptorProvider } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,9 @@ import { LoginComponent } from './components/login/login.component';
     provideStorage(() => getStorage()),
     NgCircleProgressModule.forRoot({})
   ],
-  providers: [],
+  providers: [
+    InterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
