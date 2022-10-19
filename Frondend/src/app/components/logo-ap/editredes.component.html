@@ -1,0 +1,35 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <button class="btn btn-danger" (click)="volver()"  style="display:block; margin: 20px auto;">
+                    Volver
+                </button>
+                <div class="container" *ngIf="red">
+                    <div class="row">
+                        <div>
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+                                <div class="form-group">
+                                    <label for="nombreR">Red Social</label>
+                                    <input type="text" placeholder="Ingrese red social" class="form-control" id="nombreR" name="nombreR" [(ngModel)]="red.nombreR" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="img">Imagen</label>
+                                    <input type="text" placeholder="Ingrese URl de la red" class="form-control" id="img" name="img" [(ngModel)]="red.img" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="link">Link de la Red</label>
+                                    <input type="text" placeholder="Ingrese link de la red" class="form-control" id="link" name="link" [(ngModel)]="red.link" required>               
+                                </div>
+                                <button class="bn632-hover bn26" style="display:block; margin: 20px auto;">
+                                    Actualizar
+                                </button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

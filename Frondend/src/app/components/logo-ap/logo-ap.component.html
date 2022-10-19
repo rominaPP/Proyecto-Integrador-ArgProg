@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="logo">
+                <img src="../assets/APLogo.png" id="logoAP">
+            </div>
+            <div class="botonRed col-sm-3 col-md-3 col-lg-3">
+                <button type="button" class="btn btn-outline-light" routerLink="/nuevared" *ngIf="isLogged">
+                    +Redes
+                </button>
+            </div>
+            <div class="redes">
+                <div class="descripcion">
+                    <div *ngFor="let Redes of red">
+                        <div class="red">
+                            <div>
+                                <a href={{Redes.link}}><img src={{Redes.img}} id="redS"></a>
+                            </div>
+                            <div class="botones">
+                                <button class="btn btn-secondary" routerLink="/editred/{{Redes.id}}"
+                                    *ngIf="isLogged" id="bedit"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger" (click)="delete(Redes.id)" *ngIf="isLogged" id="beliminar"><i
+                                        class="bi bi-trash3"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="session">
+                <button type="button" class="btn btn-outline-light" *ngIf="!isLogged" (click)="login()">INGRESO</button>
+                <button type="button" class="btn btn-outline-light"  *ngIf="isLogged" (click)="onLogOut()">CERRAR SESION</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  

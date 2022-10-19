@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center; 
+}
+.redes{
+    margin-right: 0.5em;
+    align-items: right; 
+}
+.red{
+    margin:5px;
+}
+
+#logoAP{
+    width: 150px;
+}
+.botonRed{
+    align-items: left; 
+}
+#redS{
+    width: 40px;
+    border-radius:100%;
+}
+.btn{
+    border: medium;
+}
+/* ... Para la vista celular ... */
+@media (max-width: 575px){
+    .container{
+        flex-direction: column;
+    }
+    .redes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .redes img{
+        margin:0.2em;
+    }
+}
+.descripcion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+    align-content: space-between;
+}
+.botones{   
+    display: flex; 
+    justify-content:center;  
+}
+#bedit, #beliminar{
+    width:20px;
+    height:20px;
+}
+i{
+    margin:none;
+    padding:0;
+    font-size:10px;
+    display: flex; 
+    justify-content:center;  
+    
+}
