@@ -19,6 +19,7 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
 import { NewEducacionComponent } from './components/educacion/new-educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NewEducacionComponent } from './components/educacion/new-educacion.comp
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
