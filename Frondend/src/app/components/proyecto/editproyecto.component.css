@@ -1,0 +1,67 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #949bf5;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(135deg,#ce90f7, #9a94f1, #949bf5, #4ab9ec, #74e9df);
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(135deg,#ce90f7, #9a94f1, #949bf5, #4ab9ec, #74e9df);  
+
+  height: 100vh;
+}
+
+  .btn{
+    position:absolute;
+    right:0;
+  }
+  .formulario{
+      max-width: 50em;
+      padding: 2em;
+      margin: 95px auto;
+      line-height : 40px;
+      background-color: transparent;
+      font-weight: bold;
+      border-radius: 0.6em;
+      box-shadow: 1em 1em 1em 1em rgb(10, 95, 70);
+  }
+  .bn632-hover {
+      width: 160px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin: 20px;
+      height: 55px;
+      text-align:center;
+      border: none;
+      background-size: 300% 100%;
+      border-radius: 50px;
+      -moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+    
+    .bn632-hover:hover {
+      background-position: 100% 0;
+      -moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+    
+    .bn632-hover:focus {
+      outline: none;
+    }
+    
+    .bn632-hover.bn26 {
+      background-image: linear-gradient(
+        to right,
+        #25aae1,
+        #4481eb,
+        #04befe,
+        #3f86ed
+      );
+      box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    }

@@ -1,0 +1,39 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <button class="btn btn-danger" (click)="volver()" style="display:block; margin: 20px auto;">
+                    Volver
+                </button>
+                <div class="container" *ngIf="pro">
+                    <div class="row">
+                        <div>
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+                                <div class="form-group">
+                                    <label for="nombrePro">Proyecto</label>
+                                    <input type="text" placeholder="Ingrese proyecto realizado" class="form-control"
+                                        id="nombrePro" name="nombrePro" [(ngModel)]="pro.nombrePro" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripPro">Descripción del proyecto</label>
+                                    <input type="text" placeholder="Ingrese descripción" class="form-control"
+                                        id="descripPro" name="descripPro" [(ngModel)]="pro.descripPro" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inicioPro">Año de inicio</label>
+                                    <input type="text" placeholder="Ingrese año de inicio del proyecto"
+                                        class="form-control" id="inicioPro" name="inicioPro" [(ngModel)]="pro.inicioPro"
+                                        required>
+                                </div>
+                                <button class="bn632-hover bn26" style="display:block; margin: 20px auto;">
+                                    Actualizar
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
