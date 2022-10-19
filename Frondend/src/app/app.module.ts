@@ -27,6 +27,8 @@ import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { EditproyectoComponent } from './components/proyecto/editproyecto.component';
 import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
     NgCircleProgressModule.forRoot({})
