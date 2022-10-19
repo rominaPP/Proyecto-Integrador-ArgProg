@@ -1,0 +1,46 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <button class="btn btn-danger" (click)="volver()"  style="display:block; margin: 20px auto;">
+                    Volver
+                </button>
+                <div class="container" *ngIf="persona">
+                    <div class="row">
+                        <div>
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" placeholder="Ingrese nombres" class="form-control" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" placeholder="Ingrese apellidos" class="form-control" id="apellido" name="apellido" [(ngModel)]="persona.apellido" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="titulo">Título</label>
+                                    <input type="text" placeholder="Ingrese título" class="form-control" id="titulo" name="titulo" [(ngModel)]="persona.titulo" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="sobremi">Acerca de mi</label>
+                                    <input type="text" placeholder="Ingrese una breve descripción" class="form-control" id="sobremi" name="sobremi" [(ngModel)]="persona.sobremi" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="img">Foto de perfil</label>
+                                    <input type="file" placeholder="Ingrese imagen" class="form-control" id="img" name="img" [(ngModel)]="persona.img" (change)="uploadImage($event)">               
+                                </div>
+                                <div class="imagen">
+                                    <img [src]="imgServ.url" width="200px">
+                                </div>
+                                <button class="bn632-hover bn26" style="display:block; margin: 20px auto;">
+                                    Actualizar
+                                </button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

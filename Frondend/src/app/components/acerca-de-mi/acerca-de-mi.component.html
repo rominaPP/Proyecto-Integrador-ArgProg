@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="boton ">
+            <div class="col">
+                <button type="button" class="btn btn-dark aling-rigth" routerLink="editperfil/1" *ngIf="isLogged" style="float: right;">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <img src={{persona.img}} class="img-fluid" id="fotoperfil">
+            </div>
+            <div class="alto col-xs-12 col-sm-7 col-md-5 col-lg-5 offset-sm-3 offset-md-4 offset-lg-4">
+                <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
+                <p id="FSD">{{persona.titulo}}</p>
+            </div> 
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col"  id="titulo">
+            <h2>Acerca de mí</h2>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            <p id="descripcionADM">{{persona.sobremi}}</p>
+        </div>
+    </div>
+</div>
+
+  
+  

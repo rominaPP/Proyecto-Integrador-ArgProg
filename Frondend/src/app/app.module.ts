@@ -11,6 +11,8 @@ import { LogoAPComponent } from './components/logo-ap/logo-ap.component';
 import { EditredesComponent } from './components/logo-ap/editredes.component';
 import { NewRedesComponent } from './components/logo-ap/new-redes.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { AcercaDeMiComponent } from './components/acerca-de-mi/acerca-de-mi.component';
+import { EditacercademiComponent } from './components/acerca-de-mi/editacercademi.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BannerComponent } from './components/banner/banner.component';
     LogoAPComponent,
     EditredesComponent,
     NewRedesComponent,
-    BannerComponent
+    BannerComponent,
+    AcercaDeMiComponent,
+    EditacercademiComponent
   ],
   imports: [
     BrowserModule,
