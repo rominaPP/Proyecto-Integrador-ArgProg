@@ -1,0 +1,39 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <button class="btn btn-danger" (click)="volver()"  style="display:block; margin: 20px auto;">
+                    Volver
+                </button>
+                <div class="container" *ngIf="edu">
+                    <div class="row">
+                        <div>
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+                                <div class="form-group">
+                                    <label for="nombreEdu">Estudios</label>
+                                    <input type="text" placeholder="Ingrese Estudios realizados" class="form-control" id="nombreEdu" name="nombreEdu" [(ngModel)]="edu.nombreEdu" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripEdu">Descripción de estudios</label>
+                                    <input type="text" placeholder="Ingrese sus estudios" class="form-control" id="descripEdu" name="descripEdu" [(ngModel)]="edu.descripEdu" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="inicioEdu">Año de inicio</label>
+                                    <input type="text" placeholder="Ingrese año de inicio estudios" class="form-control" id="inicioEdu" name="inicioExp" [(ngModel)]="edu.inicioEdu" required>               
+                                </div>
+                                <div class="form-group">
+                                    <label for="finEdu">Año de finalización</label>
+                                    <input type="text" placeholder="Ingrese año de finalización estudios" class="form-control" id="finEdu" name="finEdu" [(ngModel)]="edu.finEdu" required>               
+                                </div>
+                                <button class="bn632-hover bn26" style="display:block; margin: 20px auto;">
+                                    Actualizar
+                                </button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
